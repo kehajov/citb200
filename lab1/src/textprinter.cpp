@@ -10,4 +10,7 @@ void TextPrinter::print(std::ostream &out, Invoice invoice){
          " (" << item.getProduct().getPrice() << ")" << " = " <<
           invoice.computeItemTotal(item) << endl;
     }
+
+    out <<"Subtotal: " << invoice.computeSubtotal() << endl;
 }
+

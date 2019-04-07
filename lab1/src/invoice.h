@@ -14,6 +14,7 @@ public:
     vector<Product> getProducts();
     vector<Item> getItems();
     double computeItemTotal(Item item);
+    double computeSubtotal();
 private:
     vector<Item> items;
 };
