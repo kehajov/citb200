@@ -4,7 +4,7 @@ Product::Product(string n, double p){
     price = p;
 }
 
-string Product::getName(){
+const string Product::getName(){
     return name;
 }
 

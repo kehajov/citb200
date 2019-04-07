@@ -1,11 +1,11 @@
 #include "invoice.h"
 
-void Invoice::add(Product product, int quantity){
+void Invoice::add(const Product *product, int quantity){
     Item item(product, quantity);
     this->items.push_back(item);
 }
 
-vector<Product> Invoice::getProducts(){
+vector<Product> Invoice::getProducts() const{
     vector<Product> products;
     for(auto item : items){
         products.push_back(item.getProduct());
@@ -14,11 +14,11 @@ vector<Product> Invoice::getProducts(){
     return products;
 }
 
-vector<Item> Invoice::getItems() const{
+const vector<Item> & Invoice::getItems() const{
     return items;
 }
 
-double Invoice::computeItemTotal(Item item) const{
+double Invoice::computeItemTotal(const Item & item) const{
     return item.getQuantity()*item.getProduct().getPrice();
 }
 
