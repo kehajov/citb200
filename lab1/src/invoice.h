@@ -12,11 +12,11 @@ class Invoice {
 public:
     void add(Product product, int quantity);
     vector<Product> getProducts();
-    vector<Item> getItems();
-    double computeItemTotal(Item item);
-    double computeSubtotal();
-    double computeTax();
-    double computeTotal();
+    vector<Item> getItems() const;
+    double computeItemTotal(Item item) const;
+    double computeSubtotal() const;
+    double computeTax() const;
+    double computeTotal() const;
 private:
     vector<Item> items;
 };

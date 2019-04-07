@@ -14,15 +14,15 @@ vector<Product> Invoice::getProducts(){
     return products;
 }
 
-vector<Item> Invoice::getItems(){
+vector<Item> Invoice::getItems() const{
     return items;
 }
 
-double Invoice::computeItemTotal(Item item){
+double Invoice::computeItemTotal(Item item) const{
     return item.getQuantity()*item.getProduct().getPrice();
 }
 
-double Invoice::computeSubtotal(){
+double Invoice::computeSubtotal() const{
     double sum = 0;
     for(auto item: items){
         sum += computeItemTotal(item);
@@ -31,10 +31,10 @@ double Invoice::computeSubtotal(){
     return sum;
 }
 
-double Invoice::computeTax(){
+double Invoice::computeTax() const{
     return 0.1*computeSubtotal();
 }
 
-double Invoice::computeTotal(){
+double Invoice::computeTotal() const{
     return computeSubtotal()+computeTax();
 }
