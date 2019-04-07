@@ -12,8 +12,9 @@ class Invoice {
 public:
     void add(Product product, int quantity);
     vector<Product> getProducts();
+    vector<Item> getItems();
 private:
-    vector<Product> products;
+    vector<Item> items;
 };
 
 
