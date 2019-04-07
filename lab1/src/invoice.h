@@ -16,6 +16,7 @@ public:
     double computeItemTotal(Item item);
     double computeSubtotal();
     double computeTax();
+    double computeTotal();
 private:
     vector<Item> items;
 };
